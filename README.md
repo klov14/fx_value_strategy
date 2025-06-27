@@ -1,5 +1,5 @@
 # fx_value_strategy
-FX Value Strategy development using CPI index and Spot, Futures FX data ranging from 2000 to 2025. 
+FX Value Strategy development is a macro driven strategy that delivers modest returns with low risk using CPI index and Spot, Futures FX data ranging from 2000 to 2025. 
 After performing In-Sample analysis, and applying modern Quantitative Strategies techniques such as volatility normalisation, momentum and threshold filters, and signal analysis to optimise the performance, the Sharpe ratio came down to **0.319** and **0.280** for Out of sample analysis and maximum drawdown has not exceeded 5%, which suggests on a low risk strategy to add diversity to the portfolio and trading based on macro indicators to generate stable returns rather than generating high alpha. 
 The strategy’s signal reflects the direction of misvaluation of each currency relative to its PPP-implied fair value. To compute this, a relative PPP approach is implemented, which tracks
 inflation differentials over time rather than relying on fixed-base-year CPI levels, as in absolute PPP. This allows for a rolling estimation of fair value that adjusts dynamically with changes in
@@ -16,3 +16,5 @@ A quick walkthrough on what was done: farir_FX_t = FX_lagged * CPI_change_curren
  • A Lead/Lag and Jackknfe test performed to test the validity of the answers
 
 • An out-of-sample signal with the same filters(3 month momentum and signal strength over 0.2% misvaluation) has been applied. Furthermore, histogram for IS and OOS returns, along with the bootstrap analysis for OOS to validate that returns are within a 95% confidence band  using Monte-Carlo simulation - 200 bootstrap samples for 5 years (2021-2025) has been computed
+
+*The data used in this project is pre-processed; however, the data files itselves are not uploaded to GitHub due to their large sizes and should be downloaded from external sources if improvements want to be made from Fred and Bloomberg.*
